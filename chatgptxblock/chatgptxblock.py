@@ -36,7 +36,7 @@ class ChatgptXBlock(StudioEditableXBlockMixin, XBlock):
         ],
     )
     api_key = String(
-        default="your-openai-api-key-here",
+        default=os.environ.get("CHATGPT_XBLOCK_OPENAI_KEY", ""),
         scope=Scope.settings,
         help="Your OpenAI API key",
     )
